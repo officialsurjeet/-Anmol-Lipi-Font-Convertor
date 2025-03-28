@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import android.content.pm.PackageManager; 
 import java.io.InputStream;
@@ -67,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
 			Sheet sheet = workbook.getSheetAt(0);
 			for (Row row : sheet) {
 				for (Cell cell : row) {
-					RichTextString richText = cell.getRichStringCellValue();
+					XSSFRichTextString richText = (XSSFRichTextString) cell.getRichStringCellValue();
 					int length = richText.length();
 					for (int i = 0; i < length; i++) {
 						String charValue = String.valueOf(richText.getString().charAt(i));
-						Font font = workbook.getFontAt(richText.getFontAtIndex(i));
+						Font font = richText.getFontOfFormattingRun(i);
 						String fontName = font.getFontName();
 						result.append("Character: ").append(charValue).append(", Font: ").append(fontName).append("\n");
 					}
