@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             Sheet sheet = workbook.getSheetAt(0);
             for (Row row : sheet) {
                 for (Cell cell : row) {
-                    if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+                    if (cell.getCellType() == CellType.STRING) {
                         XSSFRichTextString richText = (XSSFRichTextString) cell.getRichStringCellValue();
                         int length = richText.length();
                         for (int i = 0; i < length; i++) {
