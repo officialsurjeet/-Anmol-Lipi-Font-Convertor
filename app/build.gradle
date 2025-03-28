@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+compileSdk 33
+
+defaultConfig {
+applicationId "com.yourpackage" // Replace with your actual package name
+minSdk 21
+targetSdk 33
+versionCode 1
+versionName "1.0"
+}
+
+buildTypes {
+release {
+minifyEnabled false
+proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+}
+}
+}
+
+dependencies {
+implementation 'org.apache.poi:poi:5.2.3'
+implementation 'org.apache.poi:poi-ooxml:5.2.3'
+implementation 'org.apache.xmlbeans:xmlbeans:5.0.2'
+implementation 'androidx.appcompat:appcompat:1.4.1'
+implementation 'androidx.core:core-ktx:1.7.0'
+implementation 'androidx.appcompat:appcompat:1.7.0-alpha03'
+    implementation 'com.google.android.material:material:1.12.0-alpha03'
+	implementation 'androidx.constraintlayout:constraintlayout:2.2.0-alpha13'	    
+}n 'androidx.constraintlayout:constraintlayout:2.2.0-alpha13'	    
+}
