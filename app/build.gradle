@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "com.yourpackage" // Replace with your actual package name
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.yourpackage" // Replace with your actual package name
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
