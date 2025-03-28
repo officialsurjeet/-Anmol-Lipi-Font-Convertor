@@ -67,11 +67,14 @@ public class MainActivity extends AppCompatActivity {
 			Sheet sheet = workbook.getSheetAt(0);
 			for (Row row : sheet) {
 				for (Cell cell : row) {
-					String cellValue = cell.toString();
-					CellStyle cellStyle = cell.getCellStyle();
-					Font font = workbook.getFontAt(cellStyle.getFontIndex());
-					String fontName = font.getFontName();
-					result.append("Cell Value: ").append(cellValue).append(", Font: ").append(fontName).append("\n");
+					RichTextString richText = cell.getRichStringCellValue();
+					int length = richText.length();
+					for (int i = 0; i < length; i++) {
+						String charValue = String.valueOf(richText.getString().charAt(i));
+						Font font = workbook.getFontAt(richText.getFontAtIndex(i));
+						String fontName = font.getFontName();
+						result.append("Character: ").append(charValue).append(", Font: ").append(fontName).append("\n");
+					}
 				}
 			}
 			} catch (Exception e) {
