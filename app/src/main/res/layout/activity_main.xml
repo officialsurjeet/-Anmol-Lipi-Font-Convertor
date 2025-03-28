@@ -1,20 +1,31 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp" >
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/selectFileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Excel File" />
+        android:text="Select File"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/resultTextView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:textSize="16sp" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/selectFileButton"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="Results will be displayed here"/>
+
+    </ScrollView>
+
+</RelativeLayout>
