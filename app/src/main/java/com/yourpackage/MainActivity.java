@@ -73,7 +73,11 @@ public class MainActivity extends AppCompatActivity {
 					for (int i = 0; i < length; i++) {
 						String charValue = String.valueOf(richText.getString().charAt(i));
 						Font font = richText.getFontOfFormattingRun(i);
-						String fontName = font.getFontName();
+						if (font != null) {
+    String fontName = font.getFontName();
+    // Proceed with using fontName
+						}
+						//String fontName = font.getFontName();
 						result.append("Character: ").append(charValue).append(", Font: ").append(fontName).append("\n");
 					}
 				}
